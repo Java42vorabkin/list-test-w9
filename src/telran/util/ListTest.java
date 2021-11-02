@@ -72,7 +72,20 @@ String initialStrings[] = {"name1", "name2"};
 		assertArrayEquals(expected0, getArrayFromList(numbers));
 		assertEquals(40, numbers.remove(1));
 		assertArrayEquals(expected1, getArrayFromList(numbers));
-		
+	}         
+	@Test
+	void testRemoveHeadTail() {
+		assertEquals(10, numbers.remove(0));
+		int size = numbers.size();
+		Integer expected[] = {20};
+		assertEquals(40, numbers.remove(size-1));
+		assertArrayEquals(expected, getArrayFromList(numbers));
+	}
+	@Test
+	void testRemoveMiddle() {
+		Integer expected[] = {10, 40};
+		assertEquals(20, numbers.remove(1));
+		assertArrayEquals(expected, getArrayFromList(numbers));
 	}
 	@Test 
 	void testSize() {
